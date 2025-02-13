@@ -1,0 +1,18 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+
+
+
+<h3 align="center"><u>Add Faculty</u></h3>
+<h2 align="center" style="color:{{color}}">{{msg}}</h2>
+<center>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Add" class="addbutton">
+    <input type="reset" value="Clear" class="addbutton">
+</form>
+</center>
+
+{% endblock %}

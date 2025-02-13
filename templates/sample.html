@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .button, .addbutton {
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .button {
+            width: 200px;
+            margin: 10px;
+        }
+        .addbutton {
+            width: 100px;
+            margin: 5px;
+        }
+        .button:hover, .addbutton:hover {
+            background-color: #555555;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <h2 class="text-center my-4">Student Academic Management System</h2>
+        <div class="text-right mb-3">
+            <span class="mr-2">Welcome, {{adminuname}}</span>
+            <a href="{% url 'adminlogin' %}" class="button">Logout</a>
+        </div>
+        <div class="d-flex justify-content-center mb-4">
+            <a href="{% url 'adminhome' %}" class="button">Home</a>
+            <a href="{% url 'adminchangepwd' %}" class="button">Change Password</a>
+            <a href="{% url 'adminstudent' %}" class="button">Student</a>
+            <a href="{% url 'adminfaculty' %}" class="button">Faculty</a>
+            <a href="{% url 'admincourse' %}" class="button">Course</a>
+            <a href="{% url 'facultycoursemapping' %}" class="button">Faculty Course Mapping</a>
+        </div>
+        {% block 'body' %}
+        <p>I am in Admin Home Page</p>
+        {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+

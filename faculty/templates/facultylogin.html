@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+
+<h2 align="center" style="color:red">{{message}}</h2>
+
+<h3 align="center"><u>Faculty Login</u></h3>
+
+<br>
+
+<center>
+
+<form method="post" action="{% url 'checkfacultylogin' %}">
+
+     {% csrf_token %}
+
+    <table align="center" width="25%" height="20%">
+
+        <tr>
+           <td>
+               <lable>Enter Faculty ID</lable>
+           </td>
+            <td>
+            <input type="number" name="fid" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+         <tr>
+            <td></td>
+        </tr>
+
+          <tr>
+           <td>
+               <lable>Enter Password</lable>
+           </td>
+            <td>
+            <input type="password" name="pwd" required/>
+            </td>
+
+         <tr>
+            <td></td>
+        </tr>
+         <tr>
+            <td></td>
+        </tr>
+
+
+         <tr align="center">
+            <td>
+            <input type="submit" value="Login" class="button"/>
+            </td>
+            <td>
+           <input type="reset" value="Clear" class="button"/>
+            </td>
+        </tr>
+
+        </tr>
+
+
+    </table>
+</form>
+
+    </center>
+
+{% endblock %}

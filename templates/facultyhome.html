@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+        .navbar {
+            background: #343a40;
+        }
+        .nav-link {
+            color: #fff;
+            margin-right: 15px;
+        }
+        .nav-link:hover {
+            color: #ffc107;
+        }
+        .navbar-brand {
+            color: #ffc107;
+        }
+        .navbar-brand:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'facultyhome' %}">SMS Project</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'facultychangepwd' %}">Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Ffacultycourses' %}">My Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Course Content</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'facultylogin' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <span class="navbar-text text-warning">
+            Welcome, {{fid}}
+        </span>
+    </nav>
+    <div class="container mt-4">
+        {% block 'body' %}
+        <p>I am in Faculty Home Page</p>
+        {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 300px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.title, .subtitle {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">{{ message }}</h2>
+        <h3 class="subtitle"><u>Admin Login</u></h3>
+
+        <form method="post" action="{% url 'checkadminlogin' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="uname">Enter Username</label>
+                <input type="text" name="uname" id="uname" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Enter Password</label>
+                <input type="password" name="pwd" id="pwd" required/>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="button"/>
+                <input type="reset" value="Clear" class="button"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

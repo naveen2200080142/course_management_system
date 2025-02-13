@@ -1,0 +1,90 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url('{% static "images/homepage_cms.jpg" %}'); /* Replace 'your-background-image.jpg' with the actual image path */
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            font-family: Arial, sans-serif;
+        }
+        /* Style the navigation bar */
+        .navbar {
+            background-color: #0074E4; /* Change to your preferred background color */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Style the navigation links */
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin-right: 20px; /* Adjust spacing between items */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFA500; /* Change to your preferred link hover color */
+        }
+
+        /* Style the h2 heading */
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+            color:azure
+        }
+
+        /* Style the body content */
+        body {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px;
+            color:aquamarine
+        }
+    </style>
+   </head>
+<body>
+
+<h2 align="center">Student Academic Management System</h2><br>
+
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="{% url 'home'  %}">Home</a></li>
+        <li><a href="{% url 'about'  %}">About</a></li>
+         <li><a href="{% url 'studentlogin'  %}">Student</a></li>
+            <li><a href="{% url 'facultylogin'  %}">Faculty</a></li>
+        <li><a href="{% url 'contact'  %}">Contact</a></li>
+        <li><a href="{% url 'login'  %}">AdminLogin</a></li>
+    </ul>
+</nav>
+
+<br><br>
+
+{% block 'body' %}
+
+
+<p>I am In Home Page</p>
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+
+<h2 align="center" style="color:red">{{message}}</h2>
+
+<h3 align="center"><u>Student Login</u></h3>
+
+<br>
+
+<center>
+
+<form method="post" action="{% url 'checkstudentlogin' %}">
+
+     {% csrf_token %}
+
+    <table align="center" width="25%" height="20%">
+
+        <tr>
+           <td>
+               <lable>Enter Student ID</lable>
+           </td>
+            <td>
+            <input type="number" name="sid" id = "sid" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+         <tr>
+            <td></td>
+        </tr>
+
+          <tr>
+           <td>
+               <lable>Enter Password</lable>
+           </td>
+            <td>
+            <input type="password" name="pwd" id="pwd" required/>
+            </td>
+
+         <tr>
+            <td></td>
+        </tr>
+         <tr>
+            <td></td>
+        </tr>
+
+
+         <tr align="center">
+            <td>
+            <input type="submit" value="Login" class="button"/>
+            </td>
+            <td>
+           <input type="reset" value="Clear" class="button"/>
+            </td>
+        </tr>
+
+        </tr>
+
+
+    </table>
+</form>
+
+    </center>
+
+{% endblock %}
